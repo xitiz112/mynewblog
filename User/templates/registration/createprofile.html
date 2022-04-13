@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<h2>createprofile</h2>
+<div class="form-control">
+<form method="POST" enctype="multipart/form-data">
+{% csrf_token %}
+{{form.media}}
+{{ form.as_p }}
+<button>create</button>
+
+</form>
+</div>
+
+{% endblock %}

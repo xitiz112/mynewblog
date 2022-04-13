@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+<h2>update post</h2>
+{% block content %}
+
+{% if user.is_authenticated %}
+
+
+
+<div class="form-control">
+<form method="POST" enctype="multipart/form-data">
+{% csrf_token %}
+{{form.media}}
+{{ form.as_p }}
+<button>update</button>
+
+</form>
+</div>
+
+
+
+
+{% else %}
+you cant update this page
+
+{% endif %}
+
+
+
+
+{% endblock %}

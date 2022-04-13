@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+<h2>delete post</h2>
+{% block content %}
+
+{% if user.is_authenticated %}
+{% if user.id == post.author.id %}
+<div class="form-control">
+<form method="POST" enctype="multipart/form-data">
+{% csrf_token %}
+<strong>are you sure you want delete this file?</strong>
+<button>delete</button>
+
+</form>
+</div>
+{% else %}
+
+you are not allowded here...
+
+{% endif %}
+{% else %}
+<h3>you cannot delete this post</h3>
+{% endif %}
+{% endblock %}

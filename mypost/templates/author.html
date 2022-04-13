@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+{% for user in user_name%}
+
+{{user.user}}
+
+
+{% if user.image %}
+<img src='{{user.image.url}}' width="20px">
+
+
+{% else %}
+<img src="{% static 'mypost/img/IMG_1687-min_11zon.jpg' %}" width="20px">
+
+{% endif %}
+<a href="{% url 'profile' user.pk %}">profile</a>
+
+{% endfor %}
+
+
+
+{% for post in user_post %}
+
+<ul>
+    <li>
+        {% if post.image %}
+      <img src="  {{post.image.url}}" width="20px;">
+      {% endif  %}
+{{post.title}},<br>
+{{post.Category}}
+
+
+</li>
+</ul>
+
+{% endfor %}
+
+
+{% endblock %}
+

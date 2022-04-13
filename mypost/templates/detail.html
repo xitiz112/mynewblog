@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load  static %}
+
+
+{% block content %}
+<h1>post detail</h1>
+<h3>{{post.title}}</h3>
+
+{% if post.image %}
+  <img src="{{post.image.url}}" width="300px">
+  {% endif%}
+{{post.post_date}}
+{{post.Category}}
+{{post.author}}
+
+<br>
+<hr>
+
+
+<div class="comment-section">
+
+{% if not post.comments.all %}
+<p>no comments</p>
+{% else %}
+<h2>{{comments}}</h2>
+
+{% for comments in post.comments.all %}
+ <div class="comment-body">
+<img src="{% static 'mypost/img/author icon.png' %}" width="20px">
+{{ comments.user_name }}-{{comments.date}}<br>
+{{comments.body}}
+<br>
+</div>
+
+{% endfor %}
+{% endif %}
+
+<a href="{% url 'article-comment' post.pk  %}"><h2>add comments</h2></a>
+
+</div>
+
+{% endblock %}
+

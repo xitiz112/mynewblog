@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+<div class="row ">
+    <h1>list of posts</h1>
+
+
+{% for post in cat_post0 %}
+<div class="col-xl-3 col-lg-4 col-md-6  post-list">
+        <a href="{% url 'article-details' post.pk %}">
+            <div class="image">
+              {% if post.image %}  
+             <img src="{{post.image.url}}">
+             {% endif%}
+             </div>
+            <div class="title">  
+                {{post.title}} 
+            </div>
+        </a>
+            <div class="edit-delete">
+
+                {% if user.is_authenticated %}
+                {% if user.id == post.author.id %}
+                <a href="{% url 'article-update' post.pk %}">edit</a>
+                <a href="{% url 'article-delete' post.pk %}">delete</a>
+
+                {% endif %}
+                {% endif %}
+            </div>
+        <div class="meta">
+        <a href="{% url 'author' post.author.pk %}">{{post.author}}</a>
+        <a href="{% url 'category' post.Category %}">{{post.Category}}</a>
+       
+        </div> 
+          
+       
+            </div>
+  
+
+     {% endfor %}
+
+
+
+    </div>
+   
+</div>
+
+
+
+
+{% endblock%}
+
+
+
+    
+
+ 

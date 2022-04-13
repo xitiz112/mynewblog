@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>{{cats}}</h1>
+
+{% for post in category_post %}
+<ul>
+    <li>
+        {% if post.image %}
+      <img src="  {{post.image.url}}" width="20px;">
+      {% endif  %}
+{{post.title}},<br>
+
+{{post.author}}
+
+
+</li>
+</ul>
+
+{% endfor %}
+{% endblock %}
+

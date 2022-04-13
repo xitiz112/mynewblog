@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load  static %}
+
+{% block content %}
+
+<div class="profile-section">
+<h3>{{user_profile.user}}</h3>
+{% if user_profile.image %}
+    <img src="{{user_profile.image.url}}" width="40px" height="40px">
+    {% else %}
+    <img src="{% static 'mypost/img/IMG_1687-min_11zon.jpg' %}" width="40px" height="40px">
+    {% endif %}
+  <p>{{user_profile.bio}}</p>
+</div>
+
+{% endblock  %}
+
