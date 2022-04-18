@@ -58,6 +58,17 @@ class detailview(DetailView):
     
 
  
+ 
+def searchview(request):
+    if request.method=="POST":
+        searched= request.POST['searched']
+        Post= post.objects.filter(title__contains=searched)
+        return render(request,"search.html",{"searched":searched,"Post":Post})
+    
+    else:
+        return render(request,"search.html",{})
+
+
 
     
 

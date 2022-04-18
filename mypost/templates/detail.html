@@ -3,19 +3,21 @@
 
 
 {% block content %}
-<h1>post detail</h1>
+<div class="post-detail">
+
 <h3>{{post.title}}</h3>
 
 {% if post.image %}
   <img src="{{post.image.url}}" width="300px">
-  {% endif%}
+  {% endif%}<br>
+  <div class="meta">
 {{post.post_date}}
 {{post.Category}}
 {{post.author}}
-
+</div>
 <br>
 <hr>
-
+</div>
 
 <div class="comment-section">
 
