@@ -5,8 +5,7 @@ from  django.contrib.auth.models import User
 from django.db.models.deletion import CASCADE
 from django.db.models.enums import Choices
 from django.urls import reverse
-from django.conf import settings
-from pytz import timezone
+
 
 
 
