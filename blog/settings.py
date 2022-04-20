@@ -17,6 +17,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 import os
 import django_heroku
+import _tkinter 
 
 
 
@@ -64,7 +65,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-     'whitenoise.middleware.WhiteNoiseMiddleware'
+     'whitenoise.middleware.WhiteNoiseMiddleware',
   
     
 
