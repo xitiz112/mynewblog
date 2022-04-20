@@ -17,7 +17,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 import os
 import django_heroku
-import _tkinter
+import dj_database_url
+from decouple import config 
+
 
 
 
