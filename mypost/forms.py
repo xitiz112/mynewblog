@@ -1,14 +1,7 @@
 
-from operator import is_
-from turtle import textinput
-from typing import Text
+
 from django import forms
-from django.db.models.enums import Choices
-from django.forms import fields, widgets
-from django.urls import is_valid_path
 from .models import category, comment, post
-from  django.contrib.auth.models import User
-from mypost.models import profile
 from django.utils.translation import gettext_lazy as _
 
 
