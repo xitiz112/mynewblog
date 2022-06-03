@@ -7,9 +7,10 @@ from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 from mypost .models import profile,category
 from  django.contrib.auth.models import User
-from User.forms import signupform,profilecreateform
+from User.forms import signupform,profilecreateform,passwordresetform
 from .serializers  import UserSerializer
 from rest_framework import viewsets
+from django.contrib.auth.views import PasswordChangeView
 
 
 # Create your views here.
@@ -17,9 +18,15 @@ class UserRegisterView(generic.CreateView):
     form_class= signupform
     template_name= "registration/register.html"
     success_url= reverse_lazy("login")
+
+
+class passwordresetview(PasswordChangeView):
+    form_class=passwordresetform
+    template_name="registration/passwordreset.html"
+    success_url = reverse_lazy("login")
    
 class profilecreateview(generic.CreateView):
-    model= profile
+    
     form_class=profilecreateform
     template_name= "registration/createprofile.html"
 

@@ -64,7 +64,8 @@ class comment(models.Model):
     user_name=models.CharField(max_length=255)
     body=models.TextField()
     date=models.DateTimeField(auto_now_add=True)
-    active = models.BooleanField(default=False)
+    
+    
 
 
     def __str__(self):

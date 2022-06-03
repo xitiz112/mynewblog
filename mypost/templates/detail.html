@@ -19,12 +19,12 @@
 <hr>
 </div>
 
-<div class="comment-section">
+<!-- <div class="comment-section"> 
 
 {% if not post.comments.all %}
 <p>no comments</p>
 {% else %}
-<h2>{{comments}}</h2>
+<h2>comments</h2>
 
 {% for comments in post.comments.all %}
  <div class="comment-body">
@@ -40,6 +40,10 @@
 <a href="{% url 'article-comment' post.pk  %}"><h2>add comments</h2></a>
 
 </div>
+-->
+<h3>comments</h3>
+<div class="fb-comments" data-href="http://127.0.0.1:8000/article/{{post.pk}}" data-width="200" data-numposts="5"></div>
+
 
 {% endblock %}
 

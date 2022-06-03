@@ -17,6 +17,8 @@
     
   </head>
   <body>
+  <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v14.0&appId=486646996097809&autoLogAppEvents=1" nonce="lVJnNeyR"></script>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Navbar</a>
@@ -63,11 +65,12 @@
                {% if  user.profile.pk %}
                 <li><a class="dropdown-item" href="{% url 'profile' user.profile.pk %}">profile</a></li>
                 <li><a class="dropdown-item" href="{% url 'profile-update' user.profile.pk %}">edit profile</a></li>
+                 <li><a class="dropdown-item" href="{% url 'password_reset' %}">reset password</a></li>
+                 <li><a class="dropdown-item" href="{% url 'logout' %}">logout</a></li>
                 {% else %}
                 <li><a class="dropdown-item" href="{% url 'create-profile'  %}">create</a></li>
                   {% endif %}
-        
-                 <li><a class="dropdown-item" href="{% url 'logout' %}">logout</a></li>
+                 
               
         
                
